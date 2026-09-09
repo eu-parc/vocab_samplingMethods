@@ -1,0 +1,202 @@
+name: Publish Vocabulary
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'vocabulary/**'
+      - 'scripts/**'
+      - 'mkdocs.yml'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install linkml rdflib skosify mkdocs mkdocs-material
+
+      - name: Find vocabulary files
+        run: |
+          VOCAB_FILES=$(find vocabulary/ -name "*.yaml" -o -name "*.yml" 2>/dev/null | tr '\n' ' ')
+          echo "Found vocabulary files: $VOCAB_FILES"
+          if [ -z "$VOCAB_FILES" ]; then
+            echo "No vocabulary files found in vocabulary/"
+            exit 1
+          fi
+
+      - name: Validate vocabulary YAML (LinkML lint)
+        run: |
+          echo "Running LinkML validation..."
+          FAILED=0
+          for vocab_file in vocabulary/*.yaml vocabulary/*.yml; do
+            [ -f "$vocab_file" ] || continue
+            echo "  Validating: $vocab_file"
+            OUTPUT=$(PYTHONUTF8=1 linkml-lint --ignore-warnings "$vocab_file" 2>&1)
+            EXIT_CODE=$?
+            if [ $EXIT_CODE -ne 0 ]; then
+              echo "  FAILED: $vocab_file"
+              echo "$OUTPUT"
+              FAILED=1
+            else
+              echo "  PASSED: $vocab_file"
+            fi
+          done
+          if [ $FAILED -ne 0 ]; then
+            echo "LinkML validation failed. Fix errors before publishing."
+            exit 1
+          fi
+          echo "All vocabulary files passed LinkML validation"
+
+      - name: Generate SKOS Turtle
+        run: |
+          echo "Generating SKOS..."
+          mkdir -p output
+          for vocab_file in vocabulary/*.yaml vocabulary/*.yml; do
+            [ -f "$vocab_file" ] || continue
+            stem=$(basename "$vocab_file" .yaml)
+            stem=$(basename "$stem" .yml)
+            echo "  Processing: $vocab_file -> output/${stem}-raw.ttl"
+            PYTHONUTF8=1 python3 scripts/generate_skos.py \
+              --input "$vocab_file" \
+              --output "output/${stem}-raw.ttl" \
+              --verbose
+          done
+          echo "SKOS generation complete"
+
+      - name: Skosify validate and repair SKOS
+        run: |
+          echo "Running Skosify..."
+          for raw_file in output/*-raw.ttl; do
+            [ -f "$raw_file" ] || continue
+            stem=$(basename "$raw_file" -raw.ttl)
+            echo "  Skosifying: $raw_file -> output/${stem}.ttl"
+            python3 scripts/skosify_vocab.py \
+              --input "$raw_file" \
+              --output "output/${stem}.ttl" \
+              --verbose
+          done
+          echo "Skosify complete"
+
+      - name: Validate concept URIs
+        run: |
+          echo "Validating concept URIs..."
+          for ttl_file in output/*.ttl; do
+            [ -f "$ttl_file" ] || continue
+            [[ "$ttl_file" == *"-raw.ttl" ]] && continue
+            echo "  Checking: $ttl_file"
+            python3 scripts/validate_uris.py \
+              --input "$ttl_file" \
+              --verbose
+          done
+          echo "URI validation complete"
+
+      - name: Register new URIs in central terms registry
+        run: |
+          echo "Registering new URIs in central terms registry..."
+          for ttl_file in output/*.ttl; do
+            [ -f "$ttl_file" ] || continue
+            [[ "$ttl_file" == *"-raw.ttl" ]] && continue
+            echo "  Registering: $ttl_file"
+            python3 scripts/register_terms.py \
+              --input "$ttl_file" \
+              --verbose
+          done
+          echo "Registration complete"
+
+      - name: Push updated terms registry
+        continue-on-error: true # Delete this once the terms repository is set up
+        run: |
+          # Check if terms.ttl was updated
+          if [ ! -f terms.ttl ]; then
+            echo "No terms.ttl generated - skipping push"
+            exit 0
+          fi
+
+          # ==================================================================
+          # NOTE [USER DEFINED]: Update the repository URL below to match
+          # your central terms repository location.
+          # If the repository moves to an enterprise GitHub account,
+          # update this URL and the TERMS_DEPLOY_KEY secret accordingly.
+          #
+          # Current: https://github.com/KatarinaRi/chemical-exposome-terms
+          # Enterprise: https://{enterprise-host}/{owner}/chemical-exposome-terms
+          # ==================================================================
+          TERMS_REPO="https://x-access-token:${{ secrets.TERMS_REPO_TOKEN }}@github.com/KatarinaRi/chemical-exposome-terms.git"
+
+          git clone "$TERMS_REPO" terms-repo
+          cp terms.ttl terms-repo/terms.ttl
+          cd terms-repo
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add terms.ttl
+
+          if git diff --staged --quiet; then
+            echo "No new URIs to register"
+          else
+            git commit -m "Register new URIs from $(basename ${{ github.repository }}) [skip ci]"
+            git push
+            echo "Terms registry updated"
+          fi
+
+      - name: List generated SKOS files
+        run: |
+          echo "Generated files in output/:"
+          ls -la output/
+
+      - name: Generate vocabulary documentation
+        run: |
+          echo "Generating vocabulary documentation..."
+          rm -rf docs/
+          mkdir -p docs
+          for vocab_file in vocabulary/*.yaml vocabulary/*.yml; do
+            [ -f "$vocab_file" ] || continue
+            echo "  Generating docs for: $vocab_file"
+            PYTHONUTF8=1 python3 scripts/generate_vocab_pages.py \
+              --input "$vocab_file" \
+              --output docs/ \
+              --verbose
+          done
+          echo "Documentation generated"
+
+      - name: Deploy to GitHub Pages
+        run: |
+          echo "Deploying to GitHub Pages..."
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          mkdocs gh-deploy --force
+          echo "GitHub Pages deployed"
+
+      - name: Commit generated SKOS files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add output/*.ttl 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git stash
+            git pull --rebase origin main
+            git stash pop
+            git add output/*.ttl 2>/dev/null || true
+            git commit -m "Auto-generate SKOS from vocabulary YAML [skip ci]"
+            git push origin main
+            echo "Generated files committed to repository"
+          fi

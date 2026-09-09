@@ -1,0 +1,834 @@
+# ===========================================================================
+# ANALYTICAL METHODS VOCABULARY
+# ===========================================================================
+# Controlled vocabulary of analytical methods used for chemical analysis
+# in environmental monitoring data.
+# Based on PARC WP9 deliverable D9.4-1.
+# ===========================================================================
+
+id: https://w3id.org/chemical-exposome/vocabulary/analytical-methods
+name: analytical-methods-vocabulary
+title: Analytical Methods Vocabulary
+description: >-
+  Controlled vocabulary of analytical methods used for chemical analysis
+  in environmental monitoring samples. Covers spectroscopy, mass spectrometry,
+  chromatography, mixed methods and other analytical techniques.
+  Developed within the PARC (Partnership for the Assessment of Risks from
+  Chemicals) project, aligned with PARC deliverable D9.4-1.
+version: "2.1.0"
+license: https://creativecommons.org/licenses/by/4.0/
+created_by: https://orcid.org/0000-0003-0222-801x
+created_on: "2026-07-30T00:00:00Z"
+last_updated_on: "2026-07-30T00:00:00Z"
+modified_by: https://orcid.org/0000-0003-0222-801x
+
+comments:
+  - >-
+    CRediT contributor roles (https://credit.niso.org/contributor-roles/):
+    Conceptualization: Katarína Řiháčková (https://orcid.org/0000-0003-0222-801x);
+    Data curation: Katarína Řiháčková (https://orcid.org/0000-0003-0222-801x)
+  - >-
+    Version 2.1 changes from v2.0: Structural corrections — restored missing
+    Atomic Emission Spectroscopy (AES) parent class; removed GC-HRMS sector
+    (full name unverified) and HPLC-Decomposition-HGAAS (full name unverified);
+    ICP-AES and ICP-OES kept as sister methods pending verification.
+    NOTE: ICP-AES and ICP-OES are widely considered synonyms —
+    ICP-OES preferred as unambiguous; ICP-AES avoided due to conflict with
+    Auger Electron Spectroscopy acronym — to be verified against PARC D9.4-1.
+
+see_also:
+  - https://www.parc-project.eu
+
+annotations:
+  schema_status:
+    tag: schema_status
+    value: draft
+
+  repo_url:
+    tag: repo_url
+    value: https://github.com/KatarinaRi/vocab_analyticalMethods
+
+  funding:
+    tag: funding
+    value: >-
+      This work was supported by the European Partnership for the Assessment
+      of Risks from Chemicals (PARC) under Horizon Europe grant agreement
+      No 101057014.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  cenvo: https://w3id.org/chemical-exposome/terms/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+default_prefix: cenvo
+
+imports:
+  - linkml:types
+
+enums:
+
+  AnalyticalMethod:
+    description: >-
+      Controlled vocabulary of analytical methods used for chemical analysis
+      in environmental monitoring samples. Full vocabulary published at
+      https://w3id.org/chemical-exposome/vocabulary/analytical-methods
+    see_also:
+      - https://w3id.org/chemical-exposome/vocabulary/analytical-methods
+
+    permissible_values:
+
+      # -----------------------------------------------------------------------
+      # TOP LEVEL
+      # -----------------------------------------------------------------------
+
+      AnalyticalMethod:
+
+      Spectroscopy:
+        is_a: AnalyticalMethod
+        aliases:
+          - Spectroscopic methods
+
+      MassSpectrometry:
+        is_a: AnalyticalMethod
+        aliases:
+          - MS methods
+
+      Chromatography:
+        is_a: AnalyticalMethod
+        aliases:
+          - Chromatographic methods
+
+      MixedMethods:
+        is_a: AnalyticalMethod
+        aliases:
+          - Hyphenated methods
+          - Coupled methods
+
+      Other:
+        is_a: AnalyticalMethod
+
+      # -----------------------------------------------------------------------
+      # SPECTROSCOPY
+      # -----------------------------------------------------------------------
+
+      # Atomic Absorption Spectroscopy
+      AAS:
+        is_a: Spectroscopy
+        aliases:
+          - Atomic Absorption Spectroscopy
+
+      DirectAAS:
+        is_a: AAS
+        aliases:
+          - Direct AAS
+
+      FlameAAS:
+        is_a: AAS
+        aliases:
+          - Flame AAS
+          - FAAS
+
+      GFAAS:
+        is_a: AAS
+        aliases:
+          - Graphite Furnace AAS
+          - GF-AAS
+          - ETAAS
+          - Electrothermal AAS
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      CVAAS:
+        is_a: AAS
+        aliases:
+          - Cold Vapour AAS
+          - CV-AAS
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      TDAAS:
+        is_a: AAS
+        aliases:
+          - Thermal Decomposition AAS
+          - TD-AAS
+
+      AdvancedMercuryAnalyzer:
+        is_a: AAS
+        aliases:
+          - AMA
+
+      DirectMercuryAnalyzer:
+        is_a: AAS
+        aliases:
+          - DMA
+
+      # Atomic Emission Spectroscopy
+      AES:
+        is_a: Spectroscopy
+        aliases:
+          - Atomic Emission Spectroscopy
+
+      DirectAES:
+        is_a: AES
+        aliases:
+          - Direct AES
+
+      FlameAES:
+        is_a: AES
+        aliases:
+          - Flame AES
+
+      PlasmaAES:
+        is_a: AES
+        aliases:
+          - Plasma AES
+
+      GDAES:
+        is_a: AES
+        aliases:
+          - Glow Discharge AES
+          - GD-AES
+
+      # Atomic Fluorescence Spectroscopy
+      AFS:
+        is_a: Spectroscopy
+        aliases:
+          - Atomic Fluorescence Spectroscopy
+
+      DirectAFS:
+        is_a: AFS
+        aliases:
+          - Direct AFS
+
+      HGAFS:
+        is_a: AFS
+        aliases:
+          - Hydride Generation AFS
+          - HG-AFS
+
+      FIAFS:
+        is_a: AFS
+        aliases:
+          - Flow Injection AFS
+          - FI-AFS
+
+      CVAFS:
+        is_a: AFS
+        aliases:
+          - Cold Vapour AFS
+          - CV-AFS
+
+      # ICP Spectroscopy
+      ICP:
+        is_a: Spectroscopy
+        aliases:
+          - Inductively Coupled Plasma Spectroscopy
+
+      ICPAES:
+        is_a: ICP
+        aliases:
+          - ICP-AES
+          - ICP Atomic Emission Spectroscopy
+        comments:
+          - >-
+            ICP-AES and ICP-OES are widely considered synonyms.
+            ICP-OES is preferred as unambiguous. ICP-AES acronym may conflict
+            with Auger Electron Spectroscopy. Status to be verified against
+            PARC D9.4-1.
+
+      ICPOES:
+        is_a: ICP
+        aliases:
+          - ICP-OES
+          - ICP Optical Emission Spectroscopy
+        comments:
+          - >-
+            ICP-OES is the preferred unambiguous acronym. ICP-AES and ICP-OES
+            are widely considered synonyms. Status to be verified against
+            PARC D9.4-1.
+
+      # X-ray Fluorescence
+      XRF:
+        is_a: Spectroscopy
+        aliases:
+          - X-ray Fluorescence Spectroscopy
+
+      EDXRF:
+        is_a: XRF
+        aliases:
+          - Energy-Dispersive XRF
+          - ED-XRF
+
+      WDXRF:
+        is_a: XRF
+        aliases:
+          - Wavelength-Dispersive XRF
+          - WD-XRF
+
+      TXRF:
+        is_a: XRF
+        aliases:
+          - Total Reflection XRF
+          - TXRF
+
+      # NMR
+      NMR:
+        is_a: Spectroscopy
+        aliases:
+          - Nuclear Magnetic Resonance Spectroscopy
+
+      H1NMR:
+        is_a: NMR
+        aliases:
+          - Proton NMR
+          - 1H NMR
+
+      C13NMR:
+        is_a: NMR
+        aliases:
+          - Carbon-13 NMR
+          - 13C NMR
+
+      # UV-Vis
+      UVVis:
+        is_a: Spectroscopy
+        aliases:
+          - UV-Visible Spectroscopy
+          - UV-Vis
+
+      SingleWavelengthUVVis:
+        is_a: UVVis
+        aliases:
+          - Single Wavelength UV-Vis
+
+      DADUVVis:
+        is_a: UVVis
+        aliases:
+          - DAD UV-Vis
+          - Diode Array Detection UV-Vis
+
+      # -----------------------------------------------------------------------
+      # MASS SPECTROMETRY
+      # -----------------------------------------------------------------------
+
+      # ICP-MS
+      ICPMS:
+        is_a: MassSpectrometry
+        aliases:
+          - ICP-MS
+          - Inductively Coupled Plasma Mass Spectrometry
+
+      ICPMSMS:
+        is_a: ICPMS
+        aliases:
+          - ICP-MS/MS
+          - ICP Tandem Mass Spectrometry
+
+      ICPDRCMS:
+        is_a: ICPMS
+        aliases:
+          - ICP-DRC-MS
+          - ICP Dynamic Reaction Cell MS
+
+      ICPKEDMS:
+        is_a: ICPMS
+        aliases:
+          - ICP-KED-MS
+          - ICP Kinetic Energy Discrimination MS
+
+      # GC-MS
+      GCMS:
+        is_a: MassSpectrometry
+        aliases:
+          - GC-MS
+          - Gas Chromatography Mass Spectrometry
+
+      GCMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-MS/MS
+          - GC Tandem MS
+
+      GCHRMS:
+        is_a: GCMS
+        aliases:
+          - GC-HRMS
+          - GC High Resolution MS
+
+      GCHRMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-HRMS/MS
+
+      GCEIMS:
+        is_a: GCMS
+        aliases:
+          - GC-EI-MS
+
+      GCEIMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-EI-MS/MS
+
+      GCEIHMS:
+        is_a: GCMS
+        aliases:
+          - GC-EI-HRMS
+
+      GCEIHRMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-EI-HRMS/MS
+
+      GCNCIMS:
+        is_a: GCMS
+        aliases:
+          - GC-NCI-MS
+
+      GCNCIMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-NCI-MS/MS
+
+      GCNCIHRMS:
+        is_a: GCMS
+        aliases:
+          - GC-NCI-HRMS
+
+      GCNCIHRMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-NCI-HRMS/MS
+
+      GCCIMS:
+        is_a: GCMS
+        aliases:
+          - GC-CI-MS
+
+      GCCIMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-CI-MS/MS
+
+      GCCIHRMS:
+        is_a: GCMS
+        aliases:
+          - GC-CI-HRMS
+
+      GCCIHRMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-CI-HRMS/MS
+
+      GCAPPIMS:
+        is_a: GCMS
+        aliases:
+          - GC-APPI-MS
+
+      GCAPPIMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-APPI-MS/MS
+
+      GCAPPIHRMS:
+        is_a: GCMS
+        aliases:
+          - GC-APPI-HRMS
+
+      GCAPPIHRMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-APPI-HRMS/MS
+
+      GCAPCIMS:
+        is_a: GCMS
+        aliases:
+          - GC-APCI-MS
+
+      GCAPCIMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-APCI-MS/MS
+
+      GCAPCIHRMS:
+        is_a: GCMS
+        aliases:
+          - GC-APCI-HRMS
+
+      GCAPCIHRMSMS:
+        is_a: GCMS
+        aliases:
+          - GC-APCI-HRMS/MS
+
+      GCxGCMS:
+        is_a: GCMS
+        aliases:
+          - GCxGC-MS
+          - GC×GC-MS
+          - Two-Dimensional GC-MS
+
+      GCxGCMSMS:
+        is_a: GCMS
+        aliases:
+          - GCxGC-MS/MS
+          - GC×GC-MS/MS
+
+      GCxGCHRMS:
+        is_a: GCMS
+        aliases:
+          - GCxGC-HRMS
+          - GC×GC-HRMS
+
+      # LC-MS
+      LCMS:
+        is_a: MassSpectrometry
+        aliases:
+          - LC-MS
+          - Liquid Chromatography Mass Spectrometry
+
+      LCMSMS:
+        is_a: LCMS
+        aliases:
+          - LC-MS/MS
+
+      LCHRMS:
+        is_a: LCMS
+        aliases:
+          - LC-HRMS
+
+      LCHRMSMS:
+        is_a: LCMS
+        aliases:
+          - LC-HRMS/MS
+
+      HPLCMS:
+        is_a: LCMS
+        aliases:
+          - HPLC-MS
+
+      HPLCMSMS:
+        is_a: LCMS
+        aliases:
+          - HPLC-MS/MS
+
+      HPLCHRMS:
+        is_a: LCMS
+        aliases:
+          - HPLC-HRMS
+
+      HPLCHRMSMS:
+        is_a: LCMS
+        aliases:
+          - HPLC-HRMS/MS
+
+      HPLCECD:
+        is_a: LCMS
+        aliases:
+          - HPLC-ECD
+          - HPLC Electrochemical Detection
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      UPLCMS:
+        is_a: LCMS
+        aliases:
+          - UPLC-MS
+
+      UPLCMSMS:
+        is_a: LCMS
+        aliases:
+          - UPLC-MS/MS
+
+      UPLCHRMS:
+        is_a: LCMS
+        aliases:
+          - UPLC-HRMS
+
+      UPLCHRMSMS:
+        is_a: LCMS
+        aliases:
+          - UPLC-HRMS/MS
+
+      # IC-MS
+      ICMS:
+        is_a: MassSpectrometry
+        aliases:
+          - IC-MS
+          - Ion Chromatography Mass Spectrometry
+
+      ICMSMS:
+        is_a: ICMS
+        aliases:
+          - IC-MS/MS
+
+      ICHRMS:
+        is_a: ICMS
+        aliases:
+          - IC-HRMS
+
+      ICHRMSMS:
+        is_a: ICMS
+        aliases:
+          - IC-HRMS/MS
+
+      ICESIMS:
+        is_a: ICMS
+        aliases:
+          - IC-ESI-MS
+
+      ICESIMSMS:
+        is_a: ICMS
+        aliases:
+          - IC-ESI-MS/MS
+
+      ICESIHRMS:
+        is_a: ICMS
+        aliases:
+          - IC-ESI-HRMS
+
+      ICESIHRMSMS:
+        is_a: ICMS
+        aliases:
+          - IC-ESI-HRMS/MS
+
+      # SFC-MS
+      SFCMS:
+        is_a: MassSpectrometry
+        aliases:
+          - SFC-MS
+          - Supercritical Fluid Chromatography Mass Spectrometry
+
+      SFCMSMS:
+        is_a: SFCMS
+        aliases:
+          - SFC-MS/MS
+
+      SFCHRMS:
+        is_a: SFCMS
+        aliases:
+          - SFC-HRMS
+
+      SFCHRMSMS:
+        is_a: SFCMS
+        aliases:
+          - SFC-HRMS/MS
+
+      # -----------------------------------------------------------------------
+      # CHROMATOGRAPHY
+      # -----------------------------------------------------------------------
+
+      # Liquid Chromatography
+      LC:
+        is_a: Chromatography
+        aliases:
+          - Liquid Chromatography
+
+      LCDAD:
+        is_a: LC
+        aliases:
+          - LC-DAD
+
+      LCFLD:
+        is_a: LC
+        aliases:
+          - LC-FLD
+
+      LCUV:
+        is_a: LC
+        aliases:
+          - LC-UV
+
+      LCVIS:
+        is_a: LC
+        aliases:
+          - LC-VIS
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      # HPLC
+      HPLC:
+        is_a: LC
+        aliases:
+          - High Performance Liquid Chromatography
+          - High Pressure Liquid Chromatography
+
+      HPLCDAD:
+        is_a: HPLC
+        aliases:
+          - HPLC-DAD
+
+      HPLCFLD:
+        is_a: HPLC
+        aliases:
+          - HPLC-FLD
+
+      HPLCUV:
+        is_a: HPLC
+        aliases:
+          - HPLC-UV
+
+      HPLCVIS:
+        is_a: HPLC
+        aliases:
+          - HPLC-VIS
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      # UPLC
+      UPLC:
+        is_a: LC
+        aliases:
+          - Ultra Performance Liquid Chromatography
+          - UHPLC
+
+      UPLCDAD:
+        is_a: UPLC
+        aliases:
+          - UPLC-DAD
+
+      UPLCFLD:
+        is_a: UPLC
+        aliases:
+          - UPLC-FLD
+
+      UPLCUV:
+        is_a: UPLC
+        aliases:
+          - UPLC-UV
+
+      UPLCVIS:
+        is_a: UPLC
+        aliases:
+          - UPLC-VIS
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      # Gas Chromatography
+      GC:
+        is_a: Chromatography
+        aliases:
+          - Gas Chromatography
+
+      GCECD:
+        is_a: GC
+        aliases:
+          - GC-ECD
+
+      GCFID:
+        is_a: GC
+        aliases:
+          - GC-FID
+
+      GCPID:
+        is_a: GC
+        aliases:
+          - GC-PID
+
+      GCFPD:
+        is_a: GC
+        aliases:
+          - GC-FPD
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      GCNPD:
+        is_a: GC
+        aliases:
+          - GC-NPD
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      # Ion Chromatography
+      IC:
+        is_a: Chromatography
+        aliases:
+          - Ion Chromatography
+
+      ICUV:
+        is_a: IC
+        aliases:
+          - IC-UV
+
+      ICDAD:
+        is_a: IC
+        aliases:
+          - IC-DAD
+
+      ICFLD:
+        is_a: IC
+        aliases:
+          - IC-FLD
+
+      # -----------------------------------------------------------------------
+      # MIXED METHODS
+      # -----------------------------------------------------------------------
+
+      MixICP:
+        is_a: MixedMethods
+        aliases:
+          - Mix-ICP
+          - Chromatography-ICP-MS
+
+      LCICPMS:
+        is_a: MixICP
+        aliases:
+          - LC-ICP-MS
+
+      LCICPMSMS:
+        is_a: MixICP
+        aliases:
+          - LC-ICP-MS/MS
+
+      GCICPMS:
+        is_a: MixICP
+        aliases:
+          - GC-ICP-MS
+
+      ICICPMS:
+        is_a: MixICP
+        aliases:
+          - IC-ICP-MS
+
+      MixOthers:
+        is_a: MixedMethods
+        aliases:
+          - Mix-Others
+
+      LCIR:
+        is_a: MixOthers
+        aliases:
+          - LC-IR
+
+      LCNMR:
+        is_a: MixOthers
+        aliases:
+          - LC-NMR
+
+      # -----------------------------------------------------------------------
+      # OTHER
+      # -----------------------------------------------------------------------
+
+      Spectrophotometry:
+        is_a: Other
+        aliases:
+          - Spectrophotometric methods
+
+      Colorimetry:
+        is_a: Spectrophotometry
+        aliases:
+          - Colorimetric methods
+        comments:
+          - Included in PARC deliverable D9.4-1
+
+      Electrophoresis:
+        is_a: Other
+        aliases:
+          - Electrophoretic methods
+
+      CZE:
+        is_a: Electrophoresis
+        aliases:
+          - Capillary Zone Electrophoresis
+          - Capillary Electrophoresis
+        comments:
+          - Included in PARC deliverable D9.4-1

@@ -1,0 +1,1108 @@
+@prefix cenvo: <https://w3id.org/chemical-exposome/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vocab: <https://w3id.org/chemical-exposome/vocabulary/analytical-methods/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/chemical-exposome/vocabulary/analytical-methods> a owl:Ontology ;
+    dct:created "2026-07-30T00:00:00+00:00"^^xsd:dateTime ;
+    dct:creator <https://orcid.org/0000-0003-0222-801x> ;
+    dct:description "Controlled vocabulary of analytical methods used for chemical analysis in environmental monitoring samples. Covers spectroscopy, mass spectrometry, chromatography, mixed methods and other analytical techniques. Developed within the PARC (Partnership for the Assessment of Risks from Chemicals) project, aligned with PARC deliverable D9.4-1."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-07-30T00:00:00+00:00"^^xsd:dateTime ;
+    dct:title "Analytical Methods Vocabulary"@en ;
+    owl:versionInfo "2.1.0" .
+
+cenvo:AdvancedMercuryAnalyzer a skos:Concept ;
+    skos:altLabel "AMA"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "AdvancedMercuryAnalyzer" ;
+    skos:prefLabel "AdvancedMercuryAnalyzer"@en .
+
+cenvo:C13NMR a skos:Concept ;
+    skos:altLabel "13C NMR"@en,
+        "Carbon-13 NMR"@en ;
+    skos:broader cenvo:NMR ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "C13NMR" ;
+    skos:prefLabel "C13NMR"@en .
+
+cenvo:CVAAS a skos:Concept ;
+    skos:altLabel "CV-AAS"@en,
+        "Cold Vapour AAS"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "CVAAS" ;
+    skos:prefLabel "CVAAS"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:CVAFS a skos:Concept ;
+    skos:altLabel "CV-AFS"@en,
+        "Cold Vapour AFS"@en ;
+    skos:broader cenvo:AFS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "CVAFS" ;
+    skos:prefLabel "CVAFS"@en .
+
+cenvo:CZE a skos:Concept ;
+    skos:altLabel "Capillary Electrophoresis"@en,
+        "Capillary Zone Electrophoresis"@en ;
+    skos:broader cenvo:Electrophoresis ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "CZE" ;
+    skos:prefLabel "CZE"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:Colorimetry a skos:Concept ;
+    skos:altLabel "Colorimetric methods"@en ;
+    skos:broader cenvo:Spectrophotometry ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "Colorimetry" ;
+    skos:prefLabel "Colorimetry"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:DADUVVis a skos:Concept ;
+    skos:altLabel "DAD UV-Vis"@en,
+        "Diode Array Detection UV-Vis"@en ;
+    skos:broader cenvo:UVVis ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "DADUVVis" ;
+    skos:prefLabel "DADUVVis"@en .
+
+cenvo:DirectAAS a skos:Concept ;
+    skos:altLabel "Direct AAS"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "DirectAAS" ;
+    skos:prefLabel "DirectAAS"@en .
+
+cenvo:DirectAES a skos:Concept ;
+    skos:altLabel "Direct AES"@en ;
+    skos:broader cenvo:AES ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "DirectAES" ;
+    skos:prefLabel "DirectAES"@en .
+
+cenvo:DirectAFS a skos:Concept ;
+    skos:altLabel "Direct AFS"@en ;
+    skos:broader cenvo:AFS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "DirectAFS" ;
+    skos:prefLabel "DirectAFS"@en .
+
+cenvo:DirectMercuryAnalyzer a skos:Concept ;
+    skos:altLabel "DMA"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "DirectMercuryAnalyzer" ;
+    skos:prefLabel "DirectMercuryAnalyzer"@en .
+
+cenvo:EDXRF a skos:Concept ;
+    skos:altLabel "ED-XRF"@en,
+        "Energy-Dispersive XRF"@en ;
+    skos:broader cenvo:XRF ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "EDXRF" ;
+    skos:prefLabel "EDXRF"@en .
+
+cenvo:FIAFS a skos:Concept ;
+    skos:altLabel "FI-AFS"@en,
+        "Flow Injection AFS"@en ;
+    skos:broader cenvo:AFS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "FIAFS" ;
+    skos:prefLabel "FIAFS"@en .
+
+cenvo:FlameAAS a skos:Concept ;
+    skos:altLabel "FAAS"@en,
+        "Flame AAS"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "FlameAAS" ;
+    skos:prefLabel "FlameAAS"@en .
+
+cenvo:FlameAES a skos:Concept ;
+    skos:altLabel "Flame AES"@en ;
+    skos:broader cenvo:AES ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "FlameAES" ;
+    skos:prefLabel "FlameAES"@en .
+
+cenvo:GCAPCIHRMS a skos:Concept ;
+    skos:altLabel "GC-APCI-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPCIHRMS" ;
+    skos:prefLabel "GCAPCIHRMS"@en .
+
+cenvo:GCAPCIHRMSMS a skos:Concept ;
+    skos:altLabel "GC-APCI-HRMS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPCIHRMSMS" ;
+    skos:prefLabel "GCAPCIHRMSMS"@en .
+
+cenvo:GCAPCIMS a skos:Concept ;
+    skos:altLabel "GC-APCI-MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPCIMS" ;
+    skos:prefLabel "GCAPCIMS"@en .
+
+cenvo:GCAPCIMSMS a skos:Concept ;
+    skos:altLabel "GC-APCI-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPCIMSMS" ;
+    skos:prefLabel "GCAPCIMSMS"@en .
+
+cenvo:GCAPPIHRMS a skos:Concept ;
+    skos:altLabel "GC-APPI-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPPIHRMS" ;
+    skos:prefLabel "GCAPPIHRMS"@en .
+
+cenvo:GCAPPIHRMSMS a skos:Concept ;
+    skos:altLabel "GC-APPI-HRMS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPPIHRMSMS" ;
+    skos:prefLabel "GCAPPIHRMSMS"@en .
+
+cenvo:GCAPPIMS a skos:Concept ;
+    skos:altLabel "GC-APPI-MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPPIMS" ;
+    skos:prefLabel "GCAPPIMS"@en .
+
+cenvo:GCAPPIMSMS a skos:Concept ;
+    skos:altLabel "GC-APPI-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCAPPIMSMS" ;
+    skos:prefLabel "GCAPPIMSMS"@en .
+
+cenvo:GCCIHRMS a skos:Concept ;
+    skos:altLabel "GC-CI-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCCIHRMS" ;
+    skos:prefLabel "GCCIHRMS"@en .
+
+cenvo:GCCIHRMSMS a skos:Concept ;
+    skos:altLabel "GC-CI-HRMS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCCIHRMSMS" ;
+    skos:prefLabel "GCCIHRMSMS"@en .
+
+cenvo:GCCIMS a skos:Concept ;
+    skos:altLabel "GC-CI-MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCCIMS" ;
+    skos:prefLabel "GCCIMS"@en .
+
+cenvo:GCCIMSMS a skos:Concept ;
+    skos:altLabel "GC-CI-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCCIMSMS" ;
+    skos:prefLabel "GCCIMSMS"@en .
+
+cenvo:GCECD a skos:Concept ;
+    skos:altLabel "GC-ECD"@en ;
+    skos:broader cenvo:GC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCECD" ;
+    skos:prefLabel "GCECD"@en .
+
+cenvo:GCEIHMS a skos:Concept ;
+    skos:altLabel "GC-EI-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCEIHMS" ;
+    skos:prefLabel "GCEIHMS"@en .
+
+cenvo:GCEIHRMSMS a skos:Concept ;
+    skos:altLabel "GC-EI-HRMS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCEIHRMSMS" ;
+    skos:prefLabel "GCEIHRMSMS"@en .
+
+cenvo:GCEIMS a skos:Concept ;
+    skos:altLabel "GC-EI-MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCEIMS" ;
+    skos:prefLabel "GCEIMS"@en .
+
+cenvo:GCEIMSMS a skos:Concept ;
+    skos:altLabel "GC-EI-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCEIMSMS" ;
+    skos:prefLabel "GCEIMSMS"@en .
+
+cenvo:GCFID a skos:Concept ;
+    skos:altLabel "GC-FID"@en ;
+    skos:broader cenvo:GC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCFID" ;
+    skos:prefLabel "GCFID"@en .
+
+cenvo:GCFPD a skos:Concept ;
+    skos:altLabel "GC-FPD"@en ;
+    skos:broader cenvo:GC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCFPD" ;
+    skos:prefLabel "GCFPD"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:GCHRMS a skos:Concept ;
+    skos:altLabel "GC High Resolution MS"@en,
+        "GC-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCHRMS" ;
+    skos:prefLabel "GCHRMS"@en .
+
+cenvo:GCHRMSMS a skos:Concept ;
+    skos:altLabel "GC-HRMS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCHRMSMS" ;
+    skos:prefLabel "GCHRMSMS"@en .
+
+cenvo:GCICPMS a skos:Concept ;
+    skos:altLabel "GC-ICP-MS"@en ;
+    skos:broader cenvo:MixICP ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCICPMS" ;
+    skos:prefLabel "GCICPMS"@en .
+
+cenvo:GCMSMS a skos:Concept ;
+    skos:altLabel "GC Tandem MS"@en,
+        "GC-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCMSMS" ;
+    skos:prefLabel "GCMSMS"@en .
+
+cenvo:GCNCIHRMS a skos:Concept ;
+    skos:altLabel "GC-NCI-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCNCIHRMS" ;
+    skos:prefLabel "GCNCIHRMS"@en .
+
+cenvo:GCNCIHRMSMS a skos:Concept ;
+    skos:altLabel "GC-NCI-HRMS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCNCIHRMSMS" ;
+    skos:prefLabel "GCNCIHRMSMS"@en .
+
+cenvo:GCNCIMS a skos:Concept ;
+    skos:altLabel "GC-NCI-MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCNCIMS" ;
+    skos:prefLabel "GCNCIMS"@en .
+
+cenvo:GCNCIMSMS a skos:Concept ;
+    skos:altLabel "GC-NCI-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCNCIMSMS" ;
+    skos:prefLabel "GCNCIMSMS"@en .
+
+cenvo:GCNPD a skos:Concept ;
+    skos:altLabel "GC-NPD"@en ;
+    skos:broader cenvo:GC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCNPD" ;
+    skos:prefLabel "GCNPD"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:GCPID a skos:Concept ;
+    skos:altLabel "GC-PID"@en ;
+    skos:broader cenvo:GC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCPID" ;
+    skos:prefLabel "GCPID"@en .
+
+cenvo:GCxGCHRMS a skos:Concept ;
+    skos:altLabel "GCxGC-HRMS"@en,
+        "GC×GC-HRMS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCxGCHRMS" ;
+    skos:prefLabel "GCxGCHRMS"@en .
+
+cenvo:GCxGCMS a skos:Concept ;
+    skos:altLabel "GCxGC-MS"@en,
+        "GC×GC-MS"@en,
+        "Two-Dimensional GC-MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCxGCMS" ;
+    skos:prefLabel "GCxGCMS"@en .
+
+cenvo:GCxGCMSMS a skos:Concept ;
+    skos:altLabel "GCxGC-MS/MS"@en,
+        "GC×GC-MS/MS"@en ;
+    skos:broader cenvo:GCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GCxGCMSMS" ;
+    skos:prefLabel "GCxGCMSMS"@en .
+
+cenvo:GDAES a skos:Concept ;
+    skos:altLabel "GD-AES"@en,
+        "Glow Discharge AES"@en ;
+    skos:broader cenvo:AES ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GDAES" ;
+    skos:prefLabel "GDAES"@en .
+
+cenvo:GFAAS a skos:Concept ;
+    skos:altLabel "ETAAS"@en,
+        "Electrothermal AAS"@en,
+        "GF-AAS"@en,
+        "Graphite Furnace AAS"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "GFAAS" ;
+    skos:prefLabel "GFAAS"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:H1NMR a skos:Concept ;
+    skos:altLabel "1H NMR"@en,
+        "Proton NMR"@en ;
+    skos:broader cenvo:NMR ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "H1NMR" ;
+    skos:prefLabel "H1NMR"@en .
+
+cenvo:HGAFS a skos:Concept ;
+    skos:altLabel "HG-AFS"@en,
+        "Hydride Generation AFS"@en ;
+    skos:broader cenvo:AFS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HGAFS" ;
+    skos:prefLabel "HGAFS"@en .
+
+cenvo:HPLCDAD a skos:Concept ;
+    skos:altLabel "HPLC-DAD"@en ;
+    skos:broader cenvo:HPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCDAD" ;
+    skos:prefLabel "HPLCDAD"@en .
+
+cenvo:HPLCECD a skos:Concept ;
+    skos:altLabel "HPLC Electrochemical Detection"@en,
+        "HPLC-ECD"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCECD" ;
+    skos:prefLabel "HPLCECD"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:HPLCFLD a skos:Concept ;
+    skos:altLabel "HPLC-FLD"@en ;
+    skos:broader cenvo:HPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCFLD" ;
+    skos:prefLabel "HPLCFLD"@en .
+
+cenvo:HPLCHRMS a skos:Concept ;
+    skos:altLabel "HPLC-HRMS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCHRMS" ;
+    skos:prefLabel "HPLCHRMS"@en .
+
+cenvo:HPLCHRMSMS a skos:Concept ;
+    skos:altLabel "HPLC-HRMS/MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCHRMSMS" ;
+    skos:prefLabel "HPLCHRMSMS"@en .
+
+cenvo:HPLCMS a skos:Concept ;
+    skos:altLabel "HPLC-MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCMS" ;
+    skos:prefLabel "HPLCMS"@en .
+
+cenvo:HPLCMSMS a skos:Concept ;
+    skos:altLabel "HPLC-MS/MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCMSMS" ;
+    skos:prefLabel "HPLCMSMS"@en .
+
+cenvo:HPLCUV a skos:Concept ;
+    skos:altLabel "HPLC-UV"@en ;
+    skos:broader cenvo:HPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCUV" ;
+    skos:prefLabel "HPLCUV"@en .
+
+cenvo:HPLCVIS a skos:Concept ;
+    skos:altLabel "HPLC-VIS"@en ;
+    skos:broader cenvo:HPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "HPLCVIS" ;
+    skos:prefLabel "HPLCVIS"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:ICDAD a skos:Concept ;
+    skos:altLabel "IC-DAD"@en ;
+    skos:broader cenvo:IC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICDAD" ;
+    skos:prefLabel "ICDAD"@en .
+
+cenvo:ICESIHRMS a skos:Concept ;
+    skos:altLabel "IC-ESI-HRMS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICESIHRMS" ;
+    skos:prefLabel "ICESIHRMS"@en .
+
+cenvo:ICESIHRMSMS a skos:Concept ;
+    skos:altLabel "IC-ESI-HRMS/MS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICESIHRMSMS" ;
+    skos:prefLabel "ICESIHRMSMS"@en .
+
+cenvo:ICESIMS a skos:Concept ;
+    skos:altLabel "IC-ESI-MS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICESIMS" ;
+    skos:prefLabel "ICESIMS"@en .
+
+cenvo:ICESIMSMS a skos:Concept ;
+    skos:altLabel "IC-ESI-MS/MS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICESIMSMS" ;
+    skos:prefLabel "ICESIMSMS"@en .
+
+cenvo:ICFLD a skos:Concept ;
+    skos:altLabel "IC-FLD"@en ;
+    skos:broader cenvo:IC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICFLD" ;
+    skos:prefLabel "ICFLD"@en .
+
+cenvo:ICHRMS a skos:Concept ;
+    skos:altLabel "IC-HRMS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICHRMS" ;
+    skos:prefLabel "ICHRMS"@en .
+
+cenvo:ICHRMSMS a skos:Concept ;
+    skos:altLabel "IC-HRMS/MS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICHRMSMS" ;
+    skos:prefLabel "ICHRMSMS"@en .
+
+cenvo:ICICPMS a skos:Concept ;
+    skos:altLabel "IC-ICP-MS"@en ;
+    skos:broader cenvo:MixICP ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICICPMS" ;
+    skos:prefLabel "ICICPMS"@en .
+
+cenvo:ICMSMS a skos:Concept ;
+    skos:altLabel "IC-MS/MS"@en ;
+    skos:broader cenvo:ICMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICMSMS" ;
+    skos:prefLabel "ICMSMS"@en .
+
+cenvo:ICPAES a skos:Concept ;
+    skos:altLabel "ICP Atomic Emission Spectroscopy"@en,
+        "ICP-AES"@en ;
+    skos:broader cenvo:ICP ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICPAES" ;
+    skos:prefLabel "ICPAES"@en ;
+    skos:scopeNote "ICP-AES and ICP-OES are widely considered synonyms. ICP-OES is preferred as unambiguous. ICP-AES acronym may conflict with Auger Electron Spectroscopy. Status to be verified against PARC D9.4-1."@en .
+
+cenvo:ICPDRCMS a skos:Concept ;
+    skos:altLabel "ICP Dynamic Reaction Cell MS"@en,
+        "ICP-DRC-MS"@en ;
+    skos:broader cenvo:ICPMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICPDRCMS" ;
+    skos:prefLabel "ICPDRCMS"@en .
+
+cenvo:ICPKEDMS a skos:Concept ;
+    skos:altLabel "ICP Kinetic Energy Discrimination MS"@en,
+        "ICP-KED-MS"@en ;
+    skos:broader cenvo:ICPMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICPKEDMS" ;
+    skos:prefLabel "ICPKEDMS"@en .
+
+cenvo:ICPMSMS a skos:Concept ;
+    skos:altLabel "ICP Tandem Mass Spectrometry"@en,
+        "ICP-MS/MS"@en ;
+    skos:broader cenvo:ICPMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICPMSMS" ;
+    skos:prefLabel "ICPMSMS"@en .
+
+cenvo:ICPOES a skos:Concept ;
+    skos:altLabel "ICP Optical Emission Spectroscopy"@en,
+        "ICP-OES"@en ;
+    skos:broader cenvo:ICP ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICPOES" ;
+    skos:prefLabel "ICPOES"@en ;
+    skos:scopeNote "ICP-OES is the preferred unambiguous acronym. ICP-AES and ICP-OES are widely considered synonyms. Status to be verified against PARC D9.4-1."@en .
+
+cenvo:ICUV a skos:Concept ;
+    skos:altLabel "IC-UV"@en ;
+    skos:broader cenvo:IC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "ICUV" ;
+    skos:prefLabel "ICUV"@en .
+
+cenvo:LCDAD a skos:Concept ;
+    skos:altLabel "LC-DAD"@en ;
+    skos:broader cenvo:LC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCDAD" ;
+    skos:prefLabel "LCDAD"@en .
+
+cenvo:LCFLD a skos:Concept ;
+    skos:altLabel "LC-FLD"@en ;
+    skos:broader cenvo:LC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCFLD" ;
+    skos:prefLabel "LCFLD"@en .
+
+cenvo:LCHRMS a skos:Concept ;
+    skos:altLabel "LC-HRMS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCHRMS" ;
+    skos:prefLabel "LCHRMS"@en .
+
+cenvo:LCHRMSMS a skos:Concept ;
+    skos:altLabel "LC-HRMS/MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCHRMSMS" ;
+    skos:prefLabel "LCHRMSMS"@en .
+
+cenvo:LCICPMS a skos:Concept ;
+    skos:altLabel "LC-ICP-MS"@en ;
+    skos:broader cenvo:MixICP ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCICPMS" ;
+    skos:prefLabel "LCICPMS"@en .
+
+cenvo:LCICPMSMS a skos:Concept ;
+    skos:altLabel "LC-ICP-MS/MS"@en ;
+    skos:broader cenvo:MixICP ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCICPMSMS" ;
+    skos:prefLabel "LCICPMSMS"@en .
+
+cenvo:LCIR a skos:Concept ;
+    skos:altLabel "LC-IR"@en ;
+    skos:broader cenvo:MixOthers ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCIR" ;
+    skos:prefLabel "LCIR"@en .
+
+cenvo:LCMSMS a skos:Concept ;
+    skos:altLabel "LC-MS/MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCMSMS" ;
+    skos:prefLabel "LCMSMS"@en .
+
+cenvo:LCNMR a skos:Concept ;
+    skos:altLabel "LC-NMR"@en ;
+    skos:broader cenvo:MixOthers ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCNMR" ;
+    skos:prefLabel "LCNMR"@en .
+
+cenvo:LCUV a skos:Concept ;
+    skos:altLabel "LC-UV"@en ;
+    skos:broader cenvo:LC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCUV" ;
+    skos:prefLabel "LCUV"@en .
+
+cenvo:LCVIS a skos:Concept ;
+    skos:altLabel "LC-VIS"@en ;
+    skos:broader cenvo:LC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "LCVIS" ;
+    skos:prefLabel "LCVIS"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:PlasmaAES a skos:Concept ;
+    skos:altLabel "Plasma AES"@en ;
+    skos:broader cenvo:AES ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "PlasmaAES" ;
+    skos:prefLabel "PlasmaAES"@en .
+
+cenvo:SFCHRMS a skos:Concept ;
+    skos:altLabel "SFC-HRMS"@en ;
+    skos:broader cenvo:SFCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "SFCHRMS" ;
+    skos:prefLabel "SFCHRMS"@en .
+
+cenvo:SFCHRMSMS a skos:Concept ;
+    skos:altLabel "SFC-HRMS/MS"@en ;
+    skos:broader cenvo:SFCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "SFCHRMSMS" ;
+    skos:prefLabel "SFCHRMSMS"@en .
+
+cenvo:SFCMSMS a skos:Concept ;
+    skos:altLabel "SFC-MS/MS"@en ;
+    skos:broader cenvo:SFCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "SFCMSMS" ;
+    skos:prefLabel "SFCMSMS"@en .
+
+cenvo:SingleWavelengthUVVis a skos:Concept ;
+    skos:altLabel "Single Wavelength UV-Vis"@en ;
+    skos:broader cenvo:UVVis ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "SingleWavelengthUVVis" ;
+    skos:prefLabel "SingleWavelengthUVVis"@en .
+
+cenvo:TDAAS a skos:Concept ;
+    skos:altLabel "TD-AAS"@en,
+        "Thermal Decomposition AAS"@en ;
+    skos:broader cenvo:AAS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "TDAAS" ;
+    skos:prefLabel "TDAAS"@en .
+
+cenvo:TXRF a skos:Concept ;
+    skos:altLabel "Total Reflection XRF"@en ;
+    skos:broader cenvo:XRF ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "TXRF" ;
+    skos:prefLabel "TXRF"@en .
+
+cenvo:UPLCDAD a skos:Concept ;
+    skos:altLabel "UPLC-DAD"@en ;
+    skos:broader cenvo:UPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCDAD" ;
+    skos:prefLabel "UPLCDAD"@en .
+
+cenvo:UPLCFLD a skos:Concept ;
+    skos:altLabel "UPLC-FLD"@en ;
+    skos:broader cenvo:UPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCFLD" ;
+    skos:prefLabel "UPLCFLD"@en .
+
+cenvo:UPLCHRMS a skos:Concept ;
+    skos:altLabel "UPLC-HRMS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCHRMS" ;
+    skos:prefLabel "UPLCHRMS"@en .
+
+cenvo:UPLCHRMSMS a skos:Concept ;
+    skos:altLabel "UPLC-HRMS/MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCHRMSMS" ;
+    skos:prefLabel "UPLCHRMSMS"@en .
+
+cenvo:UPLCMS a skos:Concept ;
+    skos:altLabel "UPLC-MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCMS" ;
+    skos:prefLabel "UPLCMS"@en .
+
+cenvo:UPLCMSMS a skos:Concept ;
+    skos:altLabel "UPLC-MS/MS"@en ;
+    skos:broader cenvo:LCMS ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCMSMS" ;
+    skos:prefLabel "UPLCMSMS"@en .
+
+cenvo:UPLCUV a skos:Concept ;
+    skos:altLabel "UPLC-UV"@en ;
+    skos:broader cenvo:UPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCUV" ;
+    skos:prefLabel "UPLCUV"@en .
+
+cenvo:UPLCVIS a skos:Concept ;
+    skos:altLabel "UPLC-VIS"@en ;
+    skos:broader cenvo:UPLC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "UPLCVIS" ;
+    skos:prefLabel "UPLCVIS"@en ;
+    skos:scopeNote "Included in PARC deliverable D9.4-1"@en .
+
+cenvo:WDXRF a skos:Concept ;
+    skos:altLabel "WD-XRF"@en,
+        "Wavelength-Dispersive XRF"@en ;
+    skos:broader cenvo:XRF ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:notation "WDXRF" ;
+    skos:prefLabel "WDXRF"@en .
+
+cenvo:Electrophoresis a skos:Concept ;
+    skos:altLabel "Electrophoretic methods"@en ;
+    skos:broader cenvo:Other ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:CZE ;
+    skos:notation "Electrophoresis" ;
+    skos:prefLabel "Electrophoresis"@en .
+
+cenvo:Spectrophotometry a skos:Concept ;
+    skos:altLabel "Spectrophotometric methods"@en ;
+    skos:broader cenvo:Other ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:Colorimetry ;
+    skos:notation "Spectrophotometry" ;
+    skos:prefLabel "Spectrophotometry"@en .
+
+cenvo:ICP a skos:Concept ;
+    skos:altLabel "Inductively Coupled Plasma Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:ICPAES,
+        cenvo:ICPOES ;
+    skos:notation "ICP" ;
+    skos:prefLabel "ICP"@en .
+
+cenvo:MixOthers a skos:Concept ;
+    skos:altLabel "Mix-Others"@en ;
+    skos:broader cenvo:MixedMethods ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:LCIR,
+        cenvo:LCNMR ;
+    skos:notation "MixOthers" ;
+    skos:prefLabel "MixOthers"@en .
+
+cenvo:MixedMethods a skos:Concept ;
+    skos:altLabel "Coupled methods"@en,
+        "Hyphenated methods"@en ;
+    skos:broader cenvo:AnalyticalMethod ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:MixICP,
+        cenvo:MixOthers ;
+    skos:notation "MixedMethods" ;
+    skos:prefLabel "MixedMethods"@en .
+
+cenvo:NMR a skos:Concept ;
+    skos:altLabel "Nuclear Magnetic Resonance Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:C13NMR,
+        cenvo:H1NMR ;
+    skos:notation "NMR" ;
+    skos:prefLabel "NMR"@en .
+
+cenvo:Other a skos:Concept ;
+    skos:broader cenvo:AnalyticalMethod ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:Electrophoresis,
+        cenvo:Spectrophotometry ;
+    skos:notation "Other" ;
+    skos:prefLabel "Other"@en .
+
+cenvo:UVVis a skos:Concept ;
+    skos:altLabel "UV-Vis"@en,
+        "UV-Visible Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:DADUVVis,
+        cenvo:SingleWavelengthUVVis ;
+    skos:notation "UVVis" ;
+    skos:prefLabel "UVVis"@en .
+
+cenvo:Chromatography a skos:Concept ;
+    skos:altLabel "Chromatographic methods"@en ;
+    skos:broader cenvo:AnalyticalMethod ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:GC,
+        cenvo:IC,
+        cenvo:LC ;
+    skos:notation "Chromatography" ;
+    skos:prefLabel "Chromatography"@en .
+
+cenvo:IC a skos:Concept ;
+    skos:altLabel "Ion Chromatography"@en ;
+    skos:broader cenvo:Chromatography ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:ICDAD,
+        cenvo:ICFLD,
+        cenvo:ICUV ;
+    skos:notation "IC" ;
+    skos:prefLabel "IC"@en .
+
+cenvo:ICPMS a skos:Concept ;
+    skos:altLabel "ICP-MS"@en,
+        "Inductively Coupled Plasma Mass Spectrometry"@en ;
+    skos:broader cenvo:MassSpectrometry ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:ICPDRCMS,
+        cenvo:ICPKEDMS,
+        cenvo:ICPMSMS ;
+    skos:notation "ICPMS" ;
+    skos:prefLabel "ICPMS"@en .
+
+cenvo:SFCMS a skos:Concept ;
+    skos:altLabel "SFC-MS"@en,
+        "Supercritical Fluid Chromatography Mass Spectrometry"@en ;
+    skos:broader cenvo:MassSpectrometry ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:SFCHRMS,
+        cenvo:SFCHRMSMS,
+        cenvo:SFCMSMS ;
+    skos:notation "SFCMS" ;
+    skos:prefLabel "SFCMS"@en .
+
+cenvo:XRF a skos:Concept ;
+    skos:altLabel "X-ray Fluorescence Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:EDXRF,
+        cenvo:TXRF,
+        cenvo:WDXRF ;
+    skos:notation "XRF" ;
+    skos:prefLabel "XRF"@en .
+
+cenvo:AES a skos:Concept ;
+    skos:altLabel "Atomic Emission Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:DirectAES,
+        cenvo:FlameAES,
+        cenvo:GDAES,
+        cenvo:PlasmaAES ;
+    skos:notation "AES" ;
+    skos:prefLabel "AES"@en .
+
+cenvo:AFS a skos:Concept ;
+    skos:altLabel "Atomic Fluorescence Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:CVAFS,
+        cenvo:DirectAFS,
+        cenvo:FIAFS,
+        cenvo:HGAFS ;
+    skos:notation "AFS" ;
+    skos:prefLabel "AFS"@en .
+
+cenvo:HPLC a skos:Concept ;
+    skos:altLabel "High Performance Liquid Chromatography"@en,
+        "High Pressure Liquid Chromatography"@en ;
+    skos:broader cenvo:LC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:HPLCDAD,
+        cenvo:HPLCFLD,
+        cenvo:HPLCUV,
+        cenvo:HPLCVIS ;
+    skos:notation "HPLC" ;
+    skos:prefLabel "HPLC"@en .
+
+cenvo:MixICP a skos:Concept ;
+    skos:altLabel "Chromatography-ICP-MS"@en,
+        "Mix-ICP"@en ;
+    skos:broader cenvo:MixedMethods ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:GCICPMS,
+        cenvo:ICICPMS,
+        cenvo:LCICPMS,
+        cenvo:LCICPMSMS ;
+    skos:notation "MixICP" ;
+    skos:prefLabel "MixICP"@en .
+
+cenvo:UPLC a skos:Concept ;
+    skos:altLabel "UHPLC"@en,
+        "Ultra Performance Liquid Chromatography"@en ;
+    skos:broader cenvo:LC ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:UPLCDAD,
+        cenvo:UPLCFLD,
+        cenvo:UPLCUV,
+        cenvo:UPLCVIS ;
+    skos:notation "UPLC" ;
+    skos:prefLabel "UPLC"@en .
+
+cenvo:AnalyticalMethod a skos:Concept ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:Chromatography,
+        cenvo:MassSpectrometry,
+        cenvo:MixedMethods,
+        cenvo:Other,
+        cenvo:Spectroscopy ;
+    skos:notation "AnalyticalMethod" ;
+    skos:prefLabel "AnalyticalMethod"@en ;
+    skos:topConceptOf vocab:AnalyticalMethod .
+
+cenvo:GC a skos:Concept ;
+    skos:altLabel "Gas Chromatography"@en ;
+    skos:broader cenvo:Chromatography ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:GCECD,
+        cenvo:GCFID,
+        cenvo:GCFPD,
+        cenvo:GCNPD,
+        cenvo:GCPID ;
+    skos:notation "GC" ;
+    skos:prefLabel "GC"@en .
+
+cenvo:MassSpectrometry a skos:Concept ;
+    skos:altLabel "MS methods"@en ;
+    skos:broader cenvo:AnalyticalMethod ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:GCMS,
+        cenvo:ICMS,
+        cenvo:ICPMS,
+        cenvo:LCMS,
+        cenvo:SFCMS ;
+    skos:notation "MassSpectrometry" ;
+    skos:prefLabel "MassSpectrometry"@en .
+
+cenvo:LC a skos:Concept ;
+    skos:altLabel "Liquid Chromatography"@en ;
+    skos:broader cenvo:Chromatography ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:HPLC,
+        cenvo:LCDAD,
+        cenvo:LCFLD,
+        cenvo:LCUV,
+        cenvo:LCVIS,
+        cenvo:UPLC ;
+    skos:notation "LC" ;
+    skos:prefLabel "LC"@en .
+
+cenvo:AAS a skos:Concept ;
+    skos:altLabel "Atomic Absorption Spectroscopy"@en ;
+    skos:broader cenvo:Spectroscopy ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:AdvancedMercuryAnalyzer,
+        cenvo:CVAAS,
+        cenvo:DirectAAS,
+        cenvo:DirectMercuryAnalyzer,
+        cenvo:FlameAAS,
+        cenvo:GFAAS,
+        cenvo:TDAAS ;
+    skos:notation "AAS" ;
+    skos:prefLabel "AAS"@en .
+
+cenvo:ICMS a skos:Concept ;
+    skos:altLabel "IC-MS"@en,
+        "Ion Chromatography Mass Spectrometry"@en ;
+    skos:broader cenvo:MassSpectrometry ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:ICESIHRMS,
+        cenvo:ICESIHRMSMS,
+        cenvo:ICESIMS,
+        cenvo:ICESIMSMS,
+        cenvo:ICHRMS,
+        cenvo:ICHRMSMS,
+        cenvo:ICMSMS ;
+    skos:notation "ICMS" ;
+    skos:prefLabel "ICMS"@en .
+
+cenvo:Spectroscopy a skos:Concept ;
+    skos:altLabel "Spectroscopic methods"@en ;
+    skos:broader cenvo:AnalyticalMethod ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:AAS,
+        cenvo:AES,
+        cenvo:AFS,
+        cenvo:ICP,
+        cenvo:NMR,
+        cenvo:UVVis,
+        cenvo:XRF ;
+    skos:notation "Spectroscopy" ;
+    skos:prefLabel "Spectroscopy"@en .
+
+cenvo:LCMS a skos:Concept ;
+    skos:altLabel "LC-MS"@en,
+        "Liquid Chromatography Mass Spectrometry"@en ;
+    skos:broader cenvo:MassSpectrometry ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:HPLCECD,
+        cenvo:HPLCHRMS,
+        cenvo:HPLCHRMSMS,
+        cenvo:HPLCMS,
+        cenvo:HPLCMSMS,
+        cenvo:LCHRMS,
+        cenvo:LCHRMSMS,
+        cenvo:LCMSMS,
+        cenvo:UPLCHRMS,
+        cenvo:UPLCHRMSMS,
+        cenvo:UPLCMS,
+        cenvo:UPLCMSMS ;
+    skos:notation "LCMS" ;
+    skos:prefLabel "LCMS"@en .
+
+cenvo:GCMS a skos:Concept ;
+    skos:altLabel "GC-MS"@en,
+        "Gas Chromatography Mass Spectrometry"@en ;
+    skos:broader cenvo:MassSpectrometry ;
+    skos:inScheme vocab:AnalyticalMethod ;
+    skos:narrower cenvo:GCAPCIHRMS,
+        cenvo:GCAPCIHRMSMS,
+        cenvo:GCAPCIMS,
+        cenvo:GCAPCIMSMS,
+        cenvo:GCAPPIHRMS,
+        cenvo:GCAPPIHRMSMS,
+        cenvo:GCAPPIMS,
+        cenvo:GCAPPIMSMS,
+        cenvo:GCCIHRMS,
+        cenvo:GCCIHRMSMS,
+        cenvo:GCCIMS,
+        cenvo:GCCIMSMS,
+        cenvo:GCEIHMS,
+        cenvo:GCEIHRMSMS,
+        cenvo:GCEIMS,
+        cenvo:GCEIMSMS,
+        cenvo:GCHRMS,
+        cenvo:GCHRMSMS,
+        cenvo:GCMSMS,
+        cenvo:GCNCIHRMS,
+        cenvo:GCNCIHRMSMS,
+        cenvo:GCNCIMS,
+        cenvo:GCNCIMSMS,
+        cenvo:GCxGCHRMS,
+        cenvo:GCxGCMS,
+        cenvo:GCxGCMSMS ;
+    skos:notation "GCMS" ;
+    skos:prefLabel "GCMS"@en .
+
+vocab:AnalyticalMethod a skos:ConceptScheme ;
+    skos:definition "Controlled vocabulary of analytical methods used for chemical analysis in environmental monitoring samples. Full vocabulary published at https://w3id.org/chemical-exposome/vocabulary/analytical-methods"@en ;
+    skos:hasTopConcept cenvo:AnalyticalMethod ;
+    skos:prefLabel "AnalyticalMethod"@en .
+
